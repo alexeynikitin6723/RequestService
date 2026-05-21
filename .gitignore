@@ -1,0 +1,51 @@
+## .NET / C# Сборка и временные файлы
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.tmp
+*.vspscc
+*.vssscc
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## IDE (Visual Studio, Rider, VS Code)
+.vs/
+.vscode/
+.idea/
+*.csproj.DotSettings
+*.sln.DotSettings
+_ReSharper.Caches/
+
+## Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+*.pfx
+*.pem
+*.secret.json
+
+## Docker (игнорируем оверрайды, оставляем базовый compose)
+docker-compose.override.yml
+docker-compose.*.yml
+!docker-compose.yml
+!Dockerfile
+
+## Тесты и метрики покрытия
+TestResults/
+[Tt]est[Rr]esult*/
+coverage.*
+*.trx
+
+## ОС и мусор
+.DS_Store
+Thumbs.db
+desktop.ini
+*.orig
+*.swp
+*~
