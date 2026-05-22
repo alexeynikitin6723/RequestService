@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RequestService.Infrastructure.Data;
+using RequestService.Infrastructure.Repositories;
 
 namespace RequestService.Infrastructure
 {
@@ -13,6 +14,9 @@ namespace RequestService.Infrastructure
             {
                 _ = options.UseNpgsql(configuration.GetConnectionString(nameof(AppDbContext)));
             });
+
+            _ = services.AddScoped<IDocumentRequestRepository, DocumentRequestRepository>();
+
             return services;
         }
     }
