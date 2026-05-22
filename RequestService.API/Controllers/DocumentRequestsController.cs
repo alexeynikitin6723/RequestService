@@ -19,7 +19,7 @@ namespace RequestService.API.Controllers
         public async Task<IActionResult> Create([FromBody] CreateDocumentRequestDto dto, CancellationToken cancellationToken = default)
         {
             DocumentRequestDto result = await _service.CreateRequestAsync(dto, cancellationToken);
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result));
+            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result);
         }
 
         [HttpGet("{id:guid}")]

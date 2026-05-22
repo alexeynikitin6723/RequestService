@@ -5,10 +5,10 @@ using RequestService.Domain.Repositories;
 
 namespace RequestService.Application.Services
 {
-    public class RequestService : IDocumentRequestService
+    public class DocumentRequestService : IDocumentRequestService
     {
         private readonly IDocumentRequestRepository _repository;
-        public RequestService(IDocumentRequestRepository repository)
+        public DocumentRequestService(IDocumentRequestRepository repository)
         {
             _repository = repository;
         }
@@ -17,7 +17,7 @@ namespace RequestService.Application.Services
             DocumentRequest? existing = await _repository.FindActiveDublicateAsync(dto.EmployeeName, dto.DocumentType, cancellationToken);
             if (existing is not null)
             {
-                throw new BusinessException("NOT_FOUND", $"У вас уже есть активный запрос на справку '{dto.DocumentType}'");
+                throw new BusinessException("DUPLICATE_REQUEST", $"У вас уже есть активный запрос на справку '{dto.DocumentType}'");
             }
             DocumentRequest request = new()
             {
@@ -28,7 +28,8 @@ namespace RequestService.Application.Services
                 Status = RequestStatus.Pending,
                 CreatedAtUtc = DateTime.UtcNow
             };
-            await _repository.AddAsync(request);
+            await _repository.AddAsync(request, cancellationToken);
+            await _repository.SaveChangesAsync(cancellationToken);
             return MapToDto(request);
         }
 

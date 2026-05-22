@@ -15,7 +15,7 @@ namespace RequestService.API.Middleware
             _logger = logger;
         }
 
-        public async Task InkoveAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
