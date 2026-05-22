@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RequestService.Domain.Models;
+using RequestService.Domain.Repositories;
 using RequestService.Infrastructure.Data;
 
 namespace RequestService.Infrastructure.Repositories

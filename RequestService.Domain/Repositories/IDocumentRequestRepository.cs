@@ -1,6 +1,6 @@
 ﻿using RequestService.Domain.Models;
 
-namespace RequestService.Infrastructure.Repositories
+namespace RequestService.Domain.Repositories
 {
     public interface IDocumentRequestRepository
     {
