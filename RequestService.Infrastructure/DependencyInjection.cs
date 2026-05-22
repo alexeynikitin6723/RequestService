@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RequestService.Domain.Repositories;
 using RequestService.Infrastructure.Data;
 using RequestService.Infrastructure.Repositories;
 
