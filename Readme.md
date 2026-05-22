@@ -51,6 +51,6 @@ dotnet ef database update --project RequestService.Infrastructure --startup-proj
 - **Кэширование**: использовать Redis для хранение данных частых запросов.
 - **Разделенять на чтение и изменение данных**: использовать CQRS-паттерн.
 
-## Видео
+## Видео  
 
-```https://github.com/alexeynikitin6723/RequestService/tree/main/video```
+[Посмотреть видео](https://github.com/alexeynikitin6723/RequestService/tree/main/Video)
